@@ -1,0 +1,3 @@
+---
+zip_code: "04275"
+url: "https://public.opendatasoft.com/api/records/1.0/search/?dataset=georef-germany-postleitzahl&q=&facet=note&facet=plz_code&refine.plz_code="
