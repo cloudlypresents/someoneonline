@@ -1,7 +1,0 @@
----
-- name: loop through file contents and install listed packages
-  apt:
-    name: "{{ item }}"
-    state: present
-    update_cache: yes
-  loop: "{{ lookup('file', 'package_requirements.txt').splitlines() }}"

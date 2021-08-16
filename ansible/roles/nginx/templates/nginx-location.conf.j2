@@ -1,5 +1,0 @@
-    location /{{ item }} {
-        index index.html;
-        alias {{ path_www_home }}{{ item }};
-        try_files $uri $uri/ =404;
-    }
