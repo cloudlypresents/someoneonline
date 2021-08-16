@@ -1,2 +1,17 @@
 ---
-- name: template
+- name: error-handling
+  command: "ls {{ check_path  }}"
+  ignore_errors: yes
+  register: error_handling_result
+
+- name: print error to log file
+  local_action:
+    module: lineinfile
+    line: "{{ error_handling_result.stderr }}"
+    path: "{{ error_folder }}/error-log.txt"
+    create: yes
+  when: error_handling_result.rc == 2
+
+- name: next-step
+  debug:
+    msg: "next step is ok"

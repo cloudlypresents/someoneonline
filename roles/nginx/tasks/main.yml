@@ -8,7 +8,7 @@
 - name: create base NGiNX config
   ansible.builtin.template:
     src: nginx-base.conf.j2
-    dest: "{{ path_nginx_config }}nginx-final.conf"
+    dest: "{{ path_nginx_config }}{{ filename_nginx_config }}"
     owner: www-data
     group: www-data
     mode: '0644'
@@ -16,7 +16,7 @@
 # adds the location entries to the base config
 - name: insert NGiNX location entries
   blockinfile:
-    path: "{{ path_nginx_config }}nginx-final.conf"
+    path: "{{ path_nginx_config }}{{ filename_nginx_config }}"
     insertafter: "### ANSIBLE GENERATED ###"
     marker: "# {mark} {{ item }} #"
     block: |

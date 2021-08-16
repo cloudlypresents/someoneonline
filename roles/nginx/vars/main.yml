@@ -1,3 +1,6 @@
+path_nginx_config: "/etc/nginx/sites-available/"
+path_www_home: "/var/www/nginx-demo/"
+filename_nginx_config: "default.conf"
 locations:
   - folder1
   - folder2
