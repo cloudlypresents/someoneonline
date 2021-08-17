@@ -1,9 +1,13 @@
 ---
-- name: error-handling
+# ls the given path
+# stores result in temp var error_handling_result
+- name: read contents for path
   command: "ls {{ check_path  }}"
   ignore_errors: yes
   register: error_handling_result
 
+# writes the error message to a local log file 
+# in the given folder
 - name: print error to log file
   local_action:
     module: lineinfile
@@ -12,6 +16,14 @@
     create: yes
   when: error_handling_result.rc == 2
 
-- name: next-step
+# if success, print the result as debug message
+- name: print result
   debug:
-    msg: "next step is ok"
+    msg: "{{ error_handling_result.stdout_lines }}"
+  when: error_handling_result.rc == 0
+
+# just another step to show, that the script 
+# runs until the end
+- name: another step
+  debug:
+    msg: "step after error"
