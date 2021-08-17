@@ -13,5 +13,5 @@ Debug-Message ausgegeben.
 ## Parameter
 Name | Value
 -----|------
-check_path | String mit 5 Zahlen <br/> default: `/nothing/here`
+check_path | String <br/> default: `/nothing/here`
 error_folder | String für Dateipfad des Error-Log <br/> default: `error-debugging`

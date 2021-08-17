@@ -3,7 +3,7 @@
 Ansible-Rollen mit zugehörigen Playbooks.
 Die Dokumentation der einzelnen Rollen befindet sich im jeweiligen Unterordner `roles/[ROLE]`.
 
-Für jede Rolle ist ein entsprechendes Playbook zur Demonstration der Roles angelegt.
+Für jede Rolle ist ein entsprechendes Playbook zur Demonstration angelegt.
 
 ## Roles / Playbooks
 1 - [package install](https://github.com/cloudlypresents/someoneonline/tree/main/roles/package-install) <br/>
