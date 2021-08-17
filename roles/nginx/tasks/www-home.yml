@@ -1,4 +1,7 @@
 ---
+# creates a folder as home directory for the location entry
+# on the remote server
+# sets the folder owner to www-data
 - name: create www-home directory for location {{ location }}
   ansible.builtin.file:
     path: "{{ path_www_home }}{{ location }}"
@@ -6,6 +9,9 @@
     owner: www-data
     group: www-data
     mode: '0755'
+# adds a index.html file with the location entry to the
+# priviously created home directory
+# sets the file owner to www-data
 - name: create the index.html from th template file
   ansible.builtin.template:
     src: index.html.j2

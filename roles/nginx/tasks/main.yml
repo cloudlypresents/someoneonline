@@ -1,10 +1,11 @@
-# iterate over location list and run tasks for creating folders
+# iterate over location list and run sub tasks for creating folders
 - include_tasks: www-home.yml
   vars:
     location: "{{ item }}"
   loop: "{{ locations }}"
 
 # creates the nginx base config
+# a template is used to set up the base config
 - name: create base NGiNX config
   ansible.builtin.template:
     src: nginx-base.conf.j2
@@ -13,7 +14,8 @@
     group: www-data
     mode: '0644'
 
-# adds the location entries to the base config
+# adds each location entry to the base config at the defined marker
+# a template is used to set up the location entry
 - name: insert NGiNX location entries
   blockinfile:
     path: "{{ path_nginx_config }}{{ filename_nginx_config }}"

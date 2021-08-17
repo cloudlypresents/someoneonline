@@ -1,5 +1,6 @@
 ---
-- name: loop through file contents and install listed packages
+# loop through file contents and install listed packages
+- name: install packages
   apt:
     name: "{{ item }}"
     state: present
