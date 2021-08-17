@@ -8,7 +8,7 @@
     state: directory
     owner: www-data
     group: www-data
-    mode: '0755'
+    mode: '0644'
 # adds a index.html file with the location entry to the
 # priviously created home directory
 # sets the file owner to www-data
