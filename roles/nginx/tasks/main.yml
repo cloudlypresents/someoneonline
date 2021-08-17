@@ -16,6 +16,7 @@
 
 # adds each location entry to the base config at the defined marker
 # a template is used to set up the location entry
+# finally reload nginx
 - name: insert NGiNX location entries
   blockinfile:
     path: "{{ path_nginx_config }}{{ filename_nginx_config }}"
